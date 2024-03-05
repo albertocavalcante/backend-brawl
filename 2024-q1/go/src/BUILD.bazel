@@ -12,6 +12,8 @@ go_binary(
     name = "backend_brawl",
     embed = [":src_lib"],
     visibility = ["//visibility:public"],
+    pure = "auto",
+    static = "on",
 )
 
 # bazel build //src:linux_amd64
