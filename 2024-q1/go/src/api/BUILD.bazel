@@ -1,0 +1,12 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "api",
+    srcs = [
+        "entrypoint.go",
+        "server.go",
+    ],
+    importpath = "backend-brawl/src/api",
+    visibility = ["//visibility:public"],
+    deps = ["//src/db"],
+)

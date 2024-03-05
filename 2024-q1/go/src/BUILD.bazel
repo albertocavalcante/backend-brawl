@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "src_lib",
+    srcs = ["backend_brawl.go"],
+    importpath = "backend-brawl/src",
+    visibility = ["//visibility:private"],
+    deps = ["//src/api"],
+)
+
+go_binary(
+    name = "backend_brawl",
+    embed = [":src_lib"],
+    visibility = ["//visibility:public"],
+)
